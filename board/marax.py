@@ -1,5 +1,5 @@
 import time
-from config import MARAX_TX, MARAX_RX, MOCK_SETUP
+from config import MARAX_TX, MARAX_RX, MARAX_UART_INVERTED, MOCK_SETUP
 from machine import Pin, SoftUART
 
 import select
@@ -37,7 +37,7 @@ class MaraxSensor(object):
         txpin = Pin(MARAX_TX)
         rxpin = Pin(MARAX_RX, Pin.IN, Pin.PULL_UP)
         print('setting up MaraX uart: TX={} RX={}'.format(txpin, rxpin))
-        self.uart = SoftUART(tx=Pin(MARAX_TX), rx=Pin(MARAX_RX), baudrate=9600)
+        self.uart = SoftUART(tx=Pin(MARAX_TX), rx=Pin(MARAX_RX), baudrate=9600, inverted=MARAX_UART_INVERTED)
         poll.register(self.uart)
 
     def recv_line(self):

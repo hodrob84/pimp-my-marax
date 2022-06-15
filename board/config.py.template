@@ -2,6 +2,7 @@ WIFI_SSID = 'your_wifi_ssid'
 WIFI_PASSWORD = 'your_wifi_password'
 MARAX_RX = 15  # D8
 MARAX_TX = 13  # D7
+MARAX_UART_INVERTED = False
 
 # set to True if you want to test it without connecting to the real MaraX
 MOCK_SETUP = False
