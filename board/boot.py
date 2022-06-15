@@ -2,6 +2,7 @@
 from config import WEBREPL_PORT, WIFI_SSID, WIFI_PASSWORD
 from config import MOCK_SETUP, MQTT_BROKER, MQTT_USER, MQTT_PASS
 from config import WEBREPL_ENABLED, WEBREPL_PASSWORD
+from config import DISPLAY_ROTATE
 import time
 import machine
 import micropython
@@ -20,6 +21,7 @@ gc.collect()
 # using default address 0x3C
 i2c = I2C(sda=Pin(4), scl=Pin(5))
 display = ssd1306.SSD1306_I2C(128, 64, i2c)
+display.rotate(DISPLAY_ROTATE)
 display.fill(0)
 display.text("Starting...", 0, 0, 1)
 display.show()

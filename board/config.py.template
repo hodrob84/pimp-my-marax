@@ -15,3 +15,6 @@ MQTT_PASS = b''
 WEBREPL_ENABLED = False
 # If using Webrepl, you must use a secret password
 WEBREPL_PASSWORD = 'secret'
+
+# Rotate display
+DISPLAY_ROTATE = True
