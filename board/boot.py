@@ -1,6 +1,6 @@
 # Create a config.py file in the same directory and make sure to configure the following constants
 from config import WEBREPL_PORT, WIFI_SSID, WIFI_PASSWORD
-from config import MOCK_SETUP, MQTT_BROKER, MQTT_USER, MQTT_PASS
+from config import MOCK_SETUP, MQTT_BROKER, MQTT_PORT, MQTT_USER, MQTT_PASS
 from config import WEBREPL_ENABLED, WEBREPL_PASSWORD
 from config import DISPLAY_ROTATE
 import time
@@ -79,6 +79,7 @@ if MQTT_BROKER:
         client_id = ubinascii.hexlify(machine.unique_id())
         mqtt = MQTTClient(client_id,
                           MQTT_BROKER,
+                          port=MQTT_PORT,
                           user=MQTT_USER,
                           password=MQTT_PASS)
 

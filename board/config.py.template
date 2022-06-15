@@ -8,6 +8,7 @@ MOCK_SETUP = False
 
 # May use None here if you don't want mqtt
 MQTT_BROKER =bv''
+MQTT_PORT = 0
 MQTT_USER = b''
 MQTT_PASS = b''
 
